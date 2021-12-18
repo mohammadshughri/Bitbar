@@ -126,9 +126,9 @@ router.get(
     }
     const db = await dbPromise;
     const query = `DELETE FROM Users WHERE username == "${req.session.account.username}";`;
-    const query1 = `DELETE FROM Users WHERE username == "user3";`;
+    // const query1 = `DELETE FROM Users WHERE username == "user3";`;
     await db.get(query);
-    await db.get(query1);
+    // await db.get(query1);
     req.session.loggedIn = false;
     req.session.account = {};
     render(
